@@ -21,5 +21,7 @@ RUN echo '  password: postgres' >> config/database.yml
 ENV RAILS_ENV production
 ENV RACK_ENV production
 
+# open the port to get to it locally
+EXPOSE 3000
 
-CMD ["bundle", "exec", "rails", "server"]
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
